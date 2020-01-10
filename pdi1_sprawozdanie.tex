@@ -1,0 +1,79 @@
+\documentclass{report}
+
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{setspace}
+\usepackage[utf8]{inputenc}
+\usepackage{polski}
+
+
+%name and stuff
+\title{Autonomiczna Nawigacja Manipulatora Dwuręcznego z Wielokierunkową Bazą Mobilną}
+\date{\today}
+\author{Marcin Skrzypkowski}
+
+
+
+\begin{document}
+	
+	
+	%customizacja strony tytułowej
+	\makeatletter
+	\renewcommand{\maketitle}{\begin{titlepage}
+		\begin{center}{\LARGE {\bf Wydział Elektroniki i Technik Informacyjnych}}\\
+			\vspace{0.4cm}
+			{\LARGE {\bf Politechnika Warszawska}}\\
+			\vspace{0.3cm}
+		\end{center}
+		\vspace{5cm}
+		\begin{center}
+			{\bf \LARGE Pracownia Dyplomowa Inżynierska  1\\ sprawozdanie  \vskip 0.1cm}
+		\end{center}
+		\vspace{1cm}
+		\begin{center}
+			{\bf \LARGE \@title}
+		\end{center}
+		\vspace{2cm}
+		\begin{center}
+			{\bf \Large \@author \par}
+		\end{center}
+		\vspace*{\stretch{1}}
+		\begin{center}
+			{\bf \large opiekun pracy: \\ dr Wojciech Szynkniewicz\par}
+		\end{center}
+		\vspace*{\stretch{5}}
+		\begin{center}
+			\bf{\large{Warszawa, \@date\vskip 0.1cm}}
+		\end{center}
+		\end{titlepage}
+}
+\makeatother	
+
+
+globalna nawigacja:
+	-
+	
+lokalny planner:
+	-poprawa holonomiczności
+	
+
+	\pagenumbering{gobble}
+	\maketitle
+	\newpage
+
+
+
+	\pagenumbering{arabic}
+	\tableofcontents
+
+	\newpage
+	
+	\include{chapters/Cel_pracy}
+
+	%\chapter{Cel pracy}
+	\include{chapters/Motywacja}
+		
+	\include{chapters/Opis_zadania}
+	
+		
+\end{document}
