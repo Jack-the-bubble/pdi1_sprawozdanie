@@ -26,4 +26,5 @@ W sekcji \ref{cel_pracy} przedstawione zostały trzy główne problemy, które m
 
 \subsection{Holonomiczność}
 
-	Obecna implementacja
+	Obecna implementacja planera lokalnego nie wspiera ruchu bazy we wszystkich kierunkach, po zadaniu pozycji planer globalny poprawnie wyznacza ścieżkę, lecz planer lokalny steruje robotem jak bazą różnicową, nie wykorzystując większej ilości stopni swobody bazy. 
+	Docelowo należy dostroić dostarczony już planer lokalny aby wykorzystywał pełnię możliwości platformy, lub, jeśli ten sposób zawiedzie, znaleźć i zaimplementować inny, który zapewni wymaganą specyfikację.

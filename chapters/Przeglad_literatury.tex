@@ -1,3 +1,32 @@
 \section{Przegląd Literatury}
+\label{przeglad_literatury}
+
+\subsection{Wykorzystanie czujników laserowych w budowaniu mapy}
+	Wykorzystanie czujników laserowych jest popularnym sposobem na stworzenie dokładnej mapy otoczenia. W użyciu spotkać można skanery zarówno dwu- jak i trójwymiarowe. 
+	Ten drugi rodzaj mógłby rozwiązać problem opisany w sekcji \ref{cel_pracy} polegający na wykrywaniu przeszkód znajdujących się powyżej bazy robota.
+	Jednak czujniki trójwymiarowe są drogie, dlatego w artykule \cite{rejas2015environment} podana jest propozycja wykorzystania skanera dwuwymiarowego w celu otrzymania przestrzennej chmury punktów.
+	Jednak w przypadku platformy Velmy z bazą wielokierunkową zastosowanie takiej metody jest na chwilę obecną niemożliwe, a ewentualna modyfikacja trudna do wykonania.
+	%TODO: wstaw zdjęcie lidara z omnivelmy
+	
+	Czujniki dwuwymiarowe cieszą się rosnącą popularnością, czego dowodem jest duża liczba istniejących algorytmów wykorzystywanych do wykrywania linii w uzyskanych skanach. 
+	Również konfiguracja dwóch czujników obecna na przedstawionej w mojej pracy platformie jest względnie popularnym rozwiązaniem, zapewniającym widoczność w pełnych $360$ stopniach \cite{nguyen2005comparison}. 
+	
+	
+	
+\subsection{Wykorzystanie kamery Kinect w budowaniu mapy}
+	W przypadkach robotów działających w środowiskach zewnętrznych popularne jest wykorzystanie modułów GPS, kamer RGB oraz czujników laserowych do budowy mapy terenu \cite{shalal2015orchard}.
+	Wykorzystanie kamery Kinect w mapowaniu przestrzeni na świeżym powietrzu jest związane z dużymi trudnościami ze względu na charakterystykę działania czujnika. Jednak niektóre badania wskazują na wyższość takiego rozwiązania nad wykorzystaniem stereowizji w konkretnych przypadkach \cite{hernandez2016using}. 
+
+	Popularne również jest wykorzystanie samego czujnika Kinect do stworzenia trójwymiarowej mapy pomieszczeń, posiada on biblioteki dostępne na wolnych licencjach i umożliwia szybkie uzyskanie mapy głębii.
+	Tworzenie map dwuwymiarowych z mapy głębi tej kamery nie jest nowym pomysłem i wykazuje poprawę w tworzeniu mapy w porównaniu z wykorzystaniem samych czujników dwuwymiarowych potencjalnie niewykrywających niektórych przeszkód, dając gwarancję ich wykrycia, z zastrzeżeniem przedmiotów przezroczystych \cite{kamarudin2013method}.
+	Niektóre badania dowodzą, że wykorzystanie kamery firmy Microsoft przy pomocy systemu ROS i pakietu GMapping skutkuje lepszymi rezultatami niż budowanie mapy z nieprzefiltrowanych skanów czujników laserowych \cite{omara2015indoor}.
+	W przypadku robota Velmy na bazie dookólnej nie przwiduję rezygnacji z czujników laserowych na rzecz pozostawienia jedynie kamery Kinect, ze względu na wielkość środowiska, w którym baza będzie w przyszłości operować.
+	Sodatkowo jak wspomniano wcześniej czujniki te dają pełne $360$ stopni pokrycia w przestrzeni dwuwymiarowej, podczas gdy kamera posiada jedynie $57 na43$ \cite{kinect_fov}. 
+	
+\subsection{Wykorzystanie wielu czujników w autonomicznej lokalizacji robota}
+	
+\subsection{Planery lokalne w bazach holonomicznych}
+	Ze względu na mniejszy stopień złożoności problemu, w wielu przypadkach roboty wykorzystujące odometrię oraz czujniki laserowe budowane są na bazach różnicowych. 
+
 
 
