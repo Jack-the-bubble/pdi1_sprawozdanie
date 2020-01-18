@@ -1,10 +1,12 @@
-\documentclass{report}
+\documentclass{article}
 
 \usepackage{graphicx}
 \usepackage{subcaption}
 \usepackage{setspace}
 \usepackage[utf8]{inputenc}
 \usepackage{polski}
+\usepackage{apacite}
+
 
 
 %name and stuff
@@ -39,7 +41,7 @@
 		\end{center}
 		\vspace*{\stretch{1}}
 		\begin{center}
-			{\bf \large opiekun pracy: \\ dr Wojciech Szynkniewicz\par}
+			{\bf \large opiekun pracy: \\ dr inż. Wojciech Szynkniewicz\par}
 		\end{center}
 		\vspace*{\stretch{5}}
 		\begin{center}
@@ -82,17 +84,25 @@ opisać działanie navigation stack?
 	
 	\include{chapters/Motywacja}
 
+	%wtęp i zakres
 	\include{chapters/Cel_pracy}
-
+		
+	%przegląd literatury
+	\include{chapters/Przeglad_literatury}
 
 	
-		
+	%formułowanie problemu	
 	\include{chapters/Opis_zadania}
 	
+	
+	%narzędzia, z których korzystam
 	\include{chapters/Konstrukcja_symulatora}
+	
+	%Podsumowanie
 	\include{chapters/Plan_dzialania}
 	
-	-dodaj bibliografię
+	\include{chapters/biblio}
+
 	
 		
 \end{document}

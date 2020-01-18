@@ -1,15 +1,19 @@
-\chapter{Cel pracy}
+\section{Cel pracy}
 
-Celem pracy jest stworzenie systemu nawigacji pozwalającego na samodzielne tworzenie mapy przez robota Velma na bazie wielokierunkowej.
-Jest to jedna z części potrzebnych do otrzymania robota spełniającego warunki robota manipulacyjnego i mobilnego, które zostały przedyskuitowane w punkcie \textbf{Motywacja}. (\textbf{dodaj linka} 
-Część manipulacyjna jest w zaawansowanej fazie i jest wciąż ulepszana. (\textbf{zalinkuj pracę Grześka})
-Robot powinien być w stanie odnaleźć się w przestrzeni z pomocą zamontowanych czujników laserowych oraz jednostki inercyjnej. 
-Robot powinien również wykrywać przeszkody niewidoczne z poziomu podłogi (stół, wystające elementy ze ścian).
+Możliwość poruszania się robota jest wymaganiem wielu współczesnych aplikacji \cite{auto_slam}.  
+Niniejsza praca skupia się na implementacji algorytmów autonomicznej lokalizacji, planowania ruchu robota Velma na bazie wielokierunkowej oraz wykonywania zadanych trajektorii. 
+Ponieważ problem planowania części manipulacyjnej jest rozpatrywany w pracy Grzegorza Fijałkowskiego, nie jest on tu poruszany.
+Elementy przedstawione w następnych rozdziałach dotyczą ruchu w przestrzeni zamkniętej, można je podzielić na dwa główne aspekty.
+Pierwszym z nich jest lokalizacja.
+%TODO: ogarnij co to za lidary
+%TODO: dodaj link do kinecta
+W mojej pracy inżynierskiej zostaną przedstawione prace mające na celu wykorzystanie obydwu czujników laserowych do jednoczesnej budowy dwuwymiarowej mapy zajętości oraz wykorzystanie kamery Kinect w dodawaniu do niej elementów znajdujących się powyżej zasięgu pozostałych czujników. 
 
-Docelowo planowana jest integracja wszystkich elementów z udostępnioną wielokierunkową bazą robota. Dzięki temu manipulator na bazie będzie w stanie wykonać podane mu konkretne zadanie.
+Dodatkowym problemem lokalizacji, który zostanie poruszony, jest badanie jej dokładności w zależności od wykorzystanych czujników.
+Badania mają odpowiedzieć na pytanie, które czujniki najlepiej w tym celu wykorzystywać.
 
-	\begin{itemize}
-		\item poprawić planner globalny
-		\item poprawić planner lokalny (?)
-		
-	\end{itemize}•
+Drugim aspektem jest poruszanie robotem holonomicznym. W obecnej chwili baza jest w stanie poruszać się we wszystkich kierunkach, a moim zadaniem jest przeprowadzenie automatyzacji działań potrzebnych do osiągnięcia tego efektu przez dodanie odpowiedniego algorytmu planowania.
+
+Punkty przedstawione powyżej są rozwinięciem istniejącej platformy, przygotowanej przez studentów Politechniki Warszawskiej.
+%TODO: prace ludzi robiących Velmę, Velmobil i połączenie.
+Celem dalszego rozwoju jest stworzenie platformy spełniającej współczesne standardy autonomicznych robotów zarówno mobilnych, jak i manipulacyjnych, ale, jak zostało wspomniane powyżej, moja praca jest skupiona wokół mobilnych aspektów platformy.
