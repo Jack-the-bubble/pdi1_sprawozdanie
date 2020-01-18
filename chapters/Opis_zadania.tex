@@ -1,1 +1,29 @@
 \section{Opis Zadania}
+\label{opis_zadania}
+
+W sekcji \ref{cel_pracy} przedstawione zostały trzy główne problemy, które moja praca inżynierska ma na celu rozwiązać.
+
+\subsection{Budowanie Mapy}
+
+	W celu poprawnej lokalizacji konieczna jest uprzednio zbudowana mapa, w tym przypadku dwuwymiarowa mapa zajętości. 
+	Jak już wcześniej zostało wspomniane, obecnie budowanie mapy wykorzystuje jeden czujnik laserowy, dowolny z obydwu dostępnych. 
+	Docelowy system będzie w stanie wykorzystać je jednocześnie przyspieszając tworzenie mapy zajętości.
+	Wykorzystanie jedynie czujników w bazie w tak wysokim robocie powoduje duże ryzyko pominięcia przeszkód znajdujących się poza ich zasięgiem, jak przykładowo stół na cienkich nogach.
+	Taka przeszkoda pojawi się na mapie zajętości w postaci czterech drobnych plam, a więc istnieje ryzyko, że robot uderzy w blat stołu nie wiedząc, że ten się tam znajduje.
+
+
+
+	W celu rozwiązania tego problemu planowana jest integracja kamery Kinect do opisanego przed chwilą systemu. 
+	Trójwymiarowa reprezentacja przestrzeni z kamery zostanie zrzutowana na mapę dwuwymiarową przygotowaną przez skanery.
+	Do przebadania zostanie problem blokowania niektórych pozycji docelowych bazy, przykładowo tak przygotowana mapa zajętości uniemożliwi bazie wjechanie częściowo pod blat, a taka operacja zwiększyła by zasięg manipulatorów nad powierzchnią stołu.
+
+\subsection{Lokalizacja}
+
+
+	Obecnie lokalizacja robota odbywa się jedynie z pomocą odometrii, liczonej na podstawie prędkości bazy jezdnej, lub poprzez pobieranie wiadomości bezpośrednio z symulatora Gazebo.
+	Ponieważ dokładność pierwszej metody jest niska \cite{jsikora-bsc-20-twiki}, a druga nie ma prawa bytu jeżeli celem jest testowanie lokalizacji, należy wykorzystać dostępne czujniki.
+	Przetestowane zostaną pojedynczy czujnik laserowy, kamera Kinect oraz jednostka inercyjna w wielu konfiguracjach, aby sprawdzić, czy najlepsze wyniki daje jeden konkretny rodzaj czujnika, czy dwa lub trzy rodzaje połączone ze sobą.
+
+\subsection{Holonomiczność}
+
+	Obecna implementacja

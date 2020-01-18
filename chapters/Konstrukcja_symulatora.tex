@@ -1,3 +1,31 @@
-\section{Konstrukcja symulatora}
+\section{Struktura systemu}
+\label{struktura_systemu}
 
-symulator
+W celu dokładnego sformułowania zadań, które należy wykonać do osiągnięcia celu postawionego w sekcji \ref{cel_pracy}, potrzebne jest przedstawienie systemu, na którym będę pracować. 
+Poniżej opisana jest część związana z symulacją.
+Mimo że docelowo wszystkie rozwiązania mają zostać przeniesione na rzeczywisty sprzęt, implementacja, wszelkie testy i badania w mojej pracy zostaną przeprowadzone w środowisku symulacji. 
+Cała platforma została oparta na popularnym systemie ROS \cite{ros}, który udostępnia liczne narzędzia wspomagające programowanie robotów.
+
+%TODO: wstaw linki do omnivelmy oraz velmy i pracę Sikora
+Początkowo wielokierunkowa baza mobilna i manipulator były oddzielnymi bytami, ale dzięki wysiłkom Jakuba Sikory \cite{jsikora-bsc-20-twiki} stanowią całość.
+Robot został stworzony w symulatorze Gazebo \cite{gazebo}, który umożliwia nie tylko przetestowanie fizycznych właściwości robota jak prędkości i reakcja na algorytmy sterowania, ale też zbudowanie własnego środowiska do testowania wszystkich aspektów robota, jak na przykład tworzenie trójwymiarowej mapy otoczenia z pomocą kamery Kinect (jeden ze sposobów jest przedstawiony tutaj \cite{kinect_setup}).
+Poza Kinectem do wykorzystania w platformie są czujniki laserowe, jednostka inercyjna oraz standardowe kamery RGB.
+Czujnik laserowy firmy Sick przeznaczony do skanowania w dwóch wymiarach (prawdopodobnie NAV2xx?) \cite{lidar} o zasięgu kątowym $270$ stopni oraz odległości skanowania do $50m$. 
+%TODO: wrzuć jednostkę inercyjną i kamery rgb
+Baza jezdna posiada cztery koła szwedzkie umożliwiające poruszanie się w dowolnym kierunku oraz obrót w miejscu.
+
+%TODO: wstaw zdjęcie samego robota i robota w środowisku
+
+
+W celu przetestowania obecnie istniejących algorytmów i porównania ich do zaimplementowanych przeze mnie wykorzystane zostaną dwa środowiska, przedstawione na rysunkach poniżej
+%TODO: wstaw zdjęcia obu środowisk
+
+Obecnie w systemie planowania zaimplementowana jest prosta wersja systemu  nawigacji wykorzystująca koncepcję połączenia planowania globalnej ścieżki oraz lokalnego planera z pakietu \textit{teb\_local\_planner}. 
+Nie spełnia on wymagań nawigacji wielokierunkowej, jej implementacja jest jednym z zadań, które zamierzam wykonać.
+
+Do celów lokalizacji w obecnym momencie wykorzystywana jest jedynie odometria bazy, obliczana na podstawie prędkości. Istnieje również możliwość przekazania dokładnej pozycji z symulatora Gazebo.
+
+
+%TODO:jakie aspekty systemu mam przedstawić? 
+%pomysły:algorytmy lokalizacji i planowania, które już działają; czujniki, które mogę wykorzystywać; przedstawienie wyglądu robota, żeby było widać wizualnie z czym mamy do czynienia - baza z kołami szwedzkimi, część manipulacyjna na niej z dwoma rękami i głową z kamerami; przedstawienie rosa i gazebo
+
